@@ -5,7 +5,7 @@ from keras.utils import to_categorical
 from keras.datasets import mnist
 import matplotlib.pyplot as plt
 from keras.layers import Flatten
-from sklearn import accuracy_score
+from sklearn.metrics import accuracy_score
 
 
 #Load Dtata
@@ -46,7 +46,6 @@ model.compile(
 model.fit(x_train,y_train,epochs=10,batch_size=64)
 
 #test
-pred=model.predict(x_test)
-acc=accuracy_score(y_test,pred)
+model.evaluate(x_test,y_test)
 
 
