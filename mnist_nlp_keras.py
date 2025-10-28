@@ -53,11 +53,19 @@ print(result.history.keys())
 print(result.history.values())
 
 #visualisation
-plt.plot(result.history['val_accuracy'],label="train accuracy",color="blue")
-plt.plot(result.history['accuracy'],label="val accuracy",color="red")
-plt.title("Train_Accuracy vs Val_Accuracy")
+plt.plot(result.history['val_accuracy'],label="validation accuracy",color="blue")
+plt.plot(result.history['accuracy'],label="train accuracy",color="red")
+plt.title("Train Accuracy vs Val Accuracy")
 plt.xlabel("epchos")
 plt.ylabel("accuracy")
+plt.legend()
+plt.show()
+
+plt.plot(result.history['val_loss'],label="validation loss",color="blue")
+plt.plot(result.history['loss'],label="train loss",color="red")
+plt.title("Train Loss vs Val Loss")
+plt.xlabel("epchos")
+plt.ylabel("loss")
 plt.legend()
 plt.show()
 
