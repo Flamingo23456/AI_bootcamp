@@ -52,3 +52,12 @@ print(f"test accuracy:{accuracy}")
 print(result.history.keys())
 print(result.history.values())
 
+#visualisation
+plt.plot(result.history['val_accuracy'],label="train accuracy",color="blue")
+plt.plot(result.history['accuracy'],label="val accuracy",color="red")
+plt.title("Train_Accuracy vs Val_Accuracy")
+plt.xlabel("epchos")
+plt.ylabel("accuracy")
+plt.legend()
+plt.show()
+
