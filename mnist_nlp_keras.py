@@ -43,10 +43,12 @@ model.compile(
 )
 
 #train
-model.fit(x_train,y_train,epochs=10,batch_size=64)
+result=model.fit(x_train,y_train,epochs=10,batch_size=64,validation_split=0.2)
 
 #evaluate
 loss,accuracy=model.evaluate(x_test,y_test)
 print(f"test loss:{loss}")
 print(f"test accuracy:{accuracy}")
+print(result.history.keys())
+print(result.history.values())
 
